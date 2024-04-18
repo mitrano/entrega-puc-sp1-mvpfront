@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <h1>Gerenciamento de Tarefas</h1>
+    <div id="tarefaTipoForm">
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="number" id="tempo" placeholder="Tempo (em minutos)">
+        <input type="hidden" id="id_tarefa_tipo">
+        <button onclick="adicionarTarefaTipo()">Adicionar Tarefa Tipo</button>
+    </div>
+    <div id="tarefasTipos">
+        <h2>Tipos de Tarefa</h2>
+        <!-- Tabela para listar os tipos de tarefa -->
+        <table id="tabelaTarefasTipos">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Tempo</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os itens da tarefa serão inseridos aqui pelo JavaScript -->
+            </tbody>
+        </table>
+        <br>
+        <button onclick="excluirTodasTarefaTipo()">Apagar Todas as Tarefas</button>
+        <br>
+        <div id="blocosPadrao">
+            <h2>Blocos Padrão</h2>
+            <table id="tabelaBlocosPadrao">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>        
+    </div>    
+    <!-- Popup para detalhes das tarefas -->
+    <div id="popupTarefas" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="fecharPopup()">&times;</span>
+            <h3>Detalhes das Tarefas</h3>
+            <table id="detalhesTarefas">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Detalhes</th>
+                        <th>Tempo</th>
+                        <th>Início</th>
+                        <th>Término</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Detalhes das tarefas serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

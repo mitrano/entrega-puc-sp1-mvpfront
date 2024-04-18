@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#tarefaTipoForm {
+    margin-bottom: 20px;
+}
+
+#tarefaTipoForm input, #tarefaTipoForm button {
+    margin-right: 10px;
+}
+
+#tarefasTipos {
+    margin-top: 20px;
+}
+
+#tabelaTarefasTipos, #tabelaTarefasTipos th, #tabelaTarefasTipos td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#tabelaTarefasTipos {
+    width: 100%;
+    border-collapse: collapse; /* Para colapsar as bordas em uma única linha */
+}
+
+.centralizado {
+    text-align: center;
+    vertical-align: middle;    
+}
+
+.centralizado_bloco {
+    text-align: center;
+    vertical-align: middle;    
+}
+
+
+#tabelaBlocosPadrao {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tabelaBlocosPadrao, #tabelaBlocosPadrao th, #tabelaBlocosPadrao td {
+    border: 1px solid black;
+}
+
+#tabelaBlocosPadrao th, #tabelaBlocosPadrao td {
+    padding: 8px;
+    text-align: left;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.popup-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    width: 50%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+/* Estilos adicionados para a tabela dentro do popup */
+#detalhesTarefas {
+    border-collapse: collapse; /* Remove o espaçamento entre as bordas das células */
+    width: 100%; /* Ocupa toda a largura do conteúdo do popup */
+    border: 1px solid black; /* Borda externa da tabela */
+    max-height: 300px; /* Defina uma altura máxima adequada para a tabela */
+    overflow-y: auto; /* Habilita a rolagem vertical dentro da tabela */    
+}
+
+#detalhesTarefas, #detalhesTarefas th, #detalhesTarefas td {
+    border: 1px solid black; /* Borda para cabeçalhos e células */
+    padding: 8px; /* Espaçamento interno para texto dentro das células */
+    text-align: left; /* Alinhamento do texto */
+}
+
+#detalhesTarefas th {
+    background-color: #f2f2f2; /* Cor de fundo para o cabeçalho da tabela */
+}
+.close-button {
+    float: right;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+.interactive-cell {
+    background-color: #f4f4f9; /* Cor de fundo sutil */
+    color: #0056b3; /* Cor do texto para destacar */
+    text-decoration: underline; /* Sublinhado para sugerir interatividade */
+    cursor: pointer;
+}
+
+.interactive-cell:hover {
+    background-color: #e8e8f8; /* Mudança de cor no hover */
+}
