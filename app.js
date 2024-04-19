@@ -2,24 +2,6 @@
 const apiUrl = 'http://127.0.0.1:5000/';
 
 /**
- * Função assíncrona para persistir informações de um tipo de tarefa.
- * Esta função verifica se a tarefa já existe com base no valor do campo 'id'.
- * Se o 'id' for maior que 0, a tarefa é atualizada. Caso contrário, uma nova tarefa é criada.
- */
-async function persistirTarefaTipo() {
-  console.log("ID: " + document.getElementById('id_tarefa_tipo').value);
-  // Verifica o valor do ID no formulário
-  if (document.getElementById('id_tarefa_tipo').value > 0) {
-    // Se o ID da tarefa tipo é maior que 0, a função para alterar a tarefa é chamada
-    alterarTarefaTipo();
-  } else {
-    // Se o ID é 0 ou não definido, a função para adicionar uma nova tarefa é chamada
-    adicionarTarefaTipo();
-  }    
-}
-
-
-/**
  * Função assíncrona para adicionar ou alterar um tipo de tarefa.
  * Captura os dados do formulário na página, define a URL apropriada
  * baseando-se no ID da tarefa e realiza uma requisição POST para o servidor.
@@ -75,6 +57,7 @@ async function adicionarTarefaTipo() {
     console.error('Erro:', error);
     alert('Erro: ' + error.message); 
   });
+  limparcampos()
 }
 
 
@@ -200,14 +183,8 @@ async function excluirTarefaTipo(id_tarefa_tipo, descricao) {
           alert('Erro ao excluir a tarefa tipo: ' + error.message);
       }
   }
+  limparcampos()
 }
-
-
-async function limparcampos() {
-  document.getElementById('descricao').value = "";
-  document.getElementById('tempo').value = "";
-  document.getElementById('id').value = "";
-}  
 
 async function excluirTodasTarefaTipo() {
   const confirmar = confirm("Tem certeza que deseja apagar todas as tarefas?");
@@ -258,6 +235,7 @@ async function excluirTodasTarefaTipo() {
   }
   listarTarefasTipos()
   listarBlocosPadrao()
+  limparcampos()
 }
 
 
@@ -381,6 +359,17 @@ document.addEventListener('keydown', function(event) {
 function fecharPopup() {
   document.getElementById('popupTarefas').style.display = 'none';
 }
+
+async function limparcampos() {
+  const descricao = document.getElementById('descricao');
+  const tempo = document.getElementById('tempo');
+  const id = document.getElementById('id_tarefa_tipo');
+
+  if (descricao) descricao.value = "";
+  if (tempo) tempo.value = "";
+  if (id_tarefa_tipo) id.value = "";
+}  
+
 
 // Carrega a lista inicialmente
 listarTarefasTipos();

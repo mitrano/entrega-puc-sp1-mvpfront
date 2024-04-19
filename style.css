@@ -2,6 +2,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+hr {
+    border: none; /* Remove a borda padrão */
+    height: 2px; /* Define a altura da linha */
+    background-color: #333; /* Define a cor da linha */
+    margin: 20px 0; /* Define a margem acima e abaixo da linha */
+}
+
 #tarefaTipoForm {
     margin-bottom: 20px;
 }

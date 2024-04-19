@@ -10,13 +10,15 @@
 <body>
     <h1>Daily Plan - Gerenciamento de Tarefas</h1>
     <div id="tarefaTipoForm">
+        <h2>Tipos de Tarefa - Inclusão e Alteração</h2>
         <input type="text" id="descricao" placeholder="Descrição">
         <input type="number" id="tempo" placeholder="Tempo (em minutos)">
         <input type="hidden" id="id_tarefa_tipo">
-        <button onclick="adicionarTarefaTipo()">Adicionar Tarefa Tipo</button>
+        <button onclick="adicionarTarefaTipo()">Gravar Tarefa Tipo</button>
+        <button onclick="limparcampos()">Limpar</button>
     </div>
     <div id="tarefasTipos">
-        <h2>Tipos de Tarefa</h2>
+        <h2>Tipos de Tarefa - Lista</h2>
         <!-- Tabela para listar os tipos de tarefa -->
         <table id="tabelaTarefasTipos">
             <thead>
@@ -34,8 +36,9 @@
         <br>
         <button onclick="excluirTodasTarefaTipo()">Apagar Todas as Tarefas</button>
         <br>
+        <hr>
         <div id="blocosPadrao">
-            <h2>Blocos Padrão</h2>
+            <h2>Blocos Padrão - Lista</h2>
             <table id="tabelaBlocosPadrao">
                 <thead></thead>
                 <tbody></tbody>
